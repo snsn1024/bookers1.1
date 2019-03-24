@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 	root 'user_images#index'
 	resources :books
 	delete 'books/:id' => 'books#destroy', as: 'destroy_book'
-	resources :user,only: [:show, :index]
+	resources :users,only: [:show, :index]
 end
 
