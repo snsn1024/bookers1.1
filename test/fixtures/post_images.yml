@@ -3,7 +3,9 @@
 one:
   image_id: MyText
   user_id: 1
+  intro: MyText
 
 two:
   image_id: MyText
   user_id: 1
+  intro: MyText
