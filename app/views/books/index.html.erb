@@ -1,5 +1,5 @@
 <% if flash[:notice] %>
-<P> <%=flash[:notice] %></P>
+<p> <%=flash[:notice] %></p>
 <% end %>
 
 <body>
@@ -12,16 +12,18 @@
 						<tbody>
 							<tr>
 								<th>name</th>
-								<th></th>
+								<th><%= current_user.name %></th>
 							</tr>
 							<tr>
 								<th>introduction</th>
-								<th></th>
+								<th><%= current_user.intro %></th>
 							</tr>
 						</tbody>
 					</table>
+
 					<div class="row">
 						<a class="" href=""></a>
+						<% end %>
 					</div>
 
 					<h2>New book</h2>
@@ -30,6 +32,7 @@
 					<%= f.text_field :title %>
 					<p>Opinion</p>
 					<%= f.text_area :opinion %>
+					<br>
 					<%= f.submit 'Create book' %>
 					<% end %>
 				</div>

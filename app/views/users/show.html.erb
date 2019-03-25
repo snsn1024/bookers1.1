@@ -17,32 +17,44 @@
 							</tr>
 						</tbody>
 					</table>
+					setting
 					<div class="row">
 						<a class="" href=""></a>
 					</div>
+					<div>
 
-					<h2>New book</h2>
-				</div>
+						<h2>New book</h2>
+						<%= form_for(@book) do |f| %>
+						<p>Title</p>
+						<%= f.text_field :title %>
+						<p>Opinion</p>
+						<%= f.text_area :opinion %>
+						<br>
+						<%= f.submit 'Create book' %>
+						<% end %>
+					</div>
 
-				<div class="col-lg-9">
-					<h2>Books</h2>
-					<table class="table">
-						<thead>
-							<tr>
-								<th></th>
-								<th>Title</th>
-								<th>Opinion</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>image</td>
-								<td> <%= link_to book.title,book_path(book.id) %> </td>
-								<td> <%= book.opinion %> </td>
-							</tr>
-							<% end %>
-						</tbody>
-					</table>
+					<div class="col-lg-9">
+						<h2>Users</h2>
+						<table class="table">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Title</th>
+									<th>Opinion</th>
+									<th colspan="3"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td> image </td>
+									<td> title </td>
+									<td> opinion </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
