@@ -1,5 +1,5 @@
 <% if flash[:notice] %>
-<p> <%=flash[:notice] %></p>
+<p> <%= flash[:notice] %></p>
 <% end %>
 
 <body>
@@ -21,10 +21,7 @@
 						</tbody>
 					</table>
 
-					<div class="row">
-						<a class="" href=""></a>
-						<% end %>
-					</div>
+
 
 					<h2>New book</h2>
 					<%= form_for(@book) do |f| %>
@@ -46,13 +43,11 @@
 								<th>Opinion</th>
 							</tr>
 						</thead>
-						<% @books.each do |book| %>
 						<tbody>
 							<tr>
-								<td> <%= link_to book.title,book_path(book.id) %> </td>
-								<td> <%= book.opinion %> </td>
+								<td> </td>
+								<td> </td>
 							</tr>
-							<% end %>
 						</tbody>
 					</table>
 				</div>
