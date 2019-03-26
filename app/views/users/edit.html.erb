@@ -1,5 +1,8 @@
 <h2>User Info</h2>
 <%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <p>error!</p>
+  <% end %>
   <p>name</p>
   <%= f.text_field :name %>
   <p>image</p>
