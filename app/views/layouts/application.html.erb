@@ -22,8 +22,8 @@
         <li><%= link_to'Books','/books'%></li>
         <li><%= link_to'logout',destroy_user_session_path, method: :delete%></li>
         <% else %>
-        <li><%= link_to'home','/root/top' %></li>
-        <li><%= link_to'About','/root/about' %></li>
+        <li><%= link_to'home',root_path %></li>
+        <li><%= link_to'About',about_path %></li>
         <li><%= link_to'Sign up','/users/sign_up' %></li>
         <li><%= link_to'Login','/users/sign_in' %></li>
         <% end %>

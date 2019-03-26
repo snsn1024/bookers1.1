@@ -1,3 +1,7 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
 <body>
 	<div class="body">
 		<div class="container">
@@ -18,9 +22,12 @@
 						</tbody>
 					</table> 
 
-					<p> <%= link_to "setting",edit_user_path(current_user.id) %></p>
+					<% if current_user.id == @user.id %>
+					<div>
+					<%= link_to "setting",edit_user_path(current_user.id) %>
+					</div>
+					<% end %>
 					
-
 					<h2>New book</h2>
 					<%= form_for(@book) do |f| %>
 					<p>Title</p>
