@@ -9,40 +9,38 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <nav class="nav navbar-nav navbar-left">
-        <span>Bookers</span>
-      </nav>
-      <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li><%= link_to'Home',user_path(current_user.id) %></li>
-          <li><%= link_to'Users','/users/' %></li>
-          <li><%= link_to'Books','/books/'%></li>
-          <li><%= link_to'logout',destroy_user_session_path, method: :delete%></li>
-          <% else %>
-          <li><%= link_to'home','/root/top' %></li>
-          <li>About</li>
-          <li><%= link_to'Sign up','/users/sign_up' %></li>
-          <li><%= link_to'Login','/users/sign_in' %></li>
-              <% end %>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <span>Bookers</span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li><%= link_to'Home',user_path(current_user.id) %></li>
+        <li><%= link_to'Users','/users/' %></li>
+        <li><%= link_to'Books','/books/'%></li>
+        <li><%= link_to'logout',destroy_user_session_path, method: :delete%></li>
+        <% else %>
+        <li><%= link_to'home','/root/top' %></li>
+        <li>About</li>
+        <li><%= link_to'Sign up','/users/sign_up' %></li>
+        <li><%= link_to'Login','/users/sign_in' %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-3 col-xs-offset-9">
-          <p>CopyRight Infratop.inc</p>
-        </div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+        <p>CopyRight Infratop.inc</p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <%= yield %>
-</body>
+<%= yield %>
 </html>

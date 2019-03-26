@@ -4,6 +4,7 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<h2> User info</h2>
+					<%= attachment_image_tag current_user,:profile_image,:fill,60,60,format:'jpeg',size:'60x60' %>
 					<table class="table">
 						<tbody>
 							<tr>
@@ -17,7 +18,9 @@
 						</tbody>
 					</table>
 
-
+					
+					<p> <%= link_to "setting",edit_user_path(current_user.id) %></p>
+					
 
 					<h2>New book</h2>
 					<%= form_for(@book) do |f| %>
