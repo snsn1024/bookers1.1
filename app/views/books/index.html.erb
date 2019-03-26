@@ -48,7 +48,7 @@
 								<th>Opinion</th>
 							</tr>
 						</thead>
-						<% @books.each do |book| %>
+						<% @user.books.each do |book| %>
 						<tbody>
 							<tr>
 								<td> <%= attachment_image_tag @user,:profile_image,:fill,60,60,format:'jpeg',fallback:"no_image.jpg",size: '40x40' %>
