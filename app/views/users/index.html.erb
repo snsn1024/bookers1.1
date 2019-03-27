@@ -1,6 +1,8 @@
-<% if flash[:notice] %>
-<P> <%=flash[:notice] %></P>
-<% end %>
+<div>
+	<% if flash[:notice] %>
+	<p> <%= flash[:notice] %></p>
+	<% end %>
+</div>
 
 <body>
 	<div class="body">
@@ -38,7 +40,6 @@
 				</div>
 
 				<div class="col-lg-9">
-
 					<h2>Users</h2>
 					<table class="table">
 						<thead>

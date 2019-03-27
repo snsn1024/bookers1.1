@@ -1,6 +1,8 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<div>
+	<% if flash[:notice] %>
+	<p> <%= flash[:notice] %></p>
+	<% end %>
+</div>
 
 <body>
 	<div class="body">
@@ -24,12 +26,15 @@
 
 					<% if current_user.id == @user.id %>
 					<div>
-					<%= link_to "setting",edit_user_path(current_user.id) %>
+						<%= link_to "setting",edit_user_path(current_user.id) %>
 					</div>
 					<% end %>
 					
 					<h2>New book</h2>
 					<%= form_for(@book) do |f| %>
+					<% if @user.errors.any? %>
+					<p>error!</p>
+					<% end %>
 					<p>Title</p>
 					<%= f.text_field :title %>
 					<p>Opinion</p>

@@ -1,6 +1,8 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<div>
+	<% if flash[:notice] %>
+	<p> <%= flash[:notice] %></p>
+	<% end %>
+</div>
 
 <body>
 	<div class="body">
@@ -22,7 +24,6 @@
 						</tbody>
 					</table>
 
-					
 					<p> <%= link_to "setting",edit_user_path(current_user.id) %></p>
 					
 
@@ -64,7 +65,3 @@
 		</div>
 	</div>
 </body>
-
-					
-					
-
