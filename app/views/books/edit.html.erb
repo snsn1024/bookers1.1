@@ -1,11 +1,8 @@
-<div>
-	<% if flash[:notice] %>
-	<p> <%= flash[:notice] %></p>
-	<% end %>
-</div>
-
 <h1>Editing Book</h1>
 <%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <p>error!</p>
+  <% end %>
 <p>Title</p>
 <%= f.text_field :title %>
 <p>Opinion</p>
