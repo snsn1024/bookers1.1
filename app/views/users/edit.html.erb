@@ -1,13 +1,22 @@
-<h2>User Info</h2>
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <p>error!</p>
-  <% end %>
-  <p>name</p>
-  <%= f.text_field :name, class: "name" %>
-  <p>image</p>
-  <%= f.attachment_field :profile_image, class: "user_image" %>
-  <p>introduction</p>
-  <%= f.text_area :intro, class: "introduction" %>
-  <%= f.submit 'Update User' %>
-  <% end %>
+<div class=body>
+  <div class=container>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>User Info</h2>
+        <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+        <p>error!</p>
+        <% end %>
+        <p>name</p>
+        <%= f.text_field :name, class: "col-xs-12 name" %>
+        <p>image</p>
+        <%= f.attachment_field :profile_image, class: "user_image" %>
+        <p>introduction</p>
+        <%= f.text_area :intro, class: "col-xs-12 introduction" %>
+        <br>
+        <%= f.submit 'Update User',class: "btn btn-primary col-xs-12" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,25 +12,27 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <nav class="nav navbar-nav navbar-left">
-      <span>Bookers</span>
+      <span style="color:white;font-size:x-large;">Bookers</span>
     </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li class="home"><%= link_to'Home',user_path(current_user.id) %></li>
-        <li class="users"><%= link_to'Users','/users' %></li>
-        <li class="books"><%= link_to'Books','/books'%></li>
-        <li class="logout"><%= link_to'logout',destroy_user_session_path, method: :delete%></li>
+        <li><%= link_to' Home',user_path(current_user.id),class: "glyphicon glyphicon-home home" %></li>
+        <li><%= link_to' Users','/users',class: "glyphicon glyphicon-user users" %></li>
+        <li><%= link_to' Books','/books',class: "glyphicon glyphicon-book books"%></li>
+        <li><%= link_to' logout',destroy_user_session_path,class: "glyphicon glyphicon-log-out logout", method: :delete%></li>
         <% else %>
-        <li class="home"><%= link_to'home',root_path %></li>
-        <li class="about"><%= link_to'About',about_path %></li>
-        <li class="sign_up"><%= link_to'Sign up','/users/sign_up' %></li>
-        <li class="sign_in"><%= link_to'Login','/users/sign_in' %></li>
+        <li><%= link_to' Home',root_path,class: "glyphicon glyphicon-home home" %></li>
+        <li><%= link_to' About',about_path,class: "glyphicon glyphicon-link about" %></li>
+        <li><%= link_to' Sign up','/users/sign_up',class: "glyphicon glyphicon-edit sign_up" %></li>
+        <li><%= link_to' Login','/users/sign_in',class: "glyphicon glyphicon-log-in sign_in" %></li>
         <% end %>
       </ul>
     </nav>
   </div>
 </header>
+
+<%= yield %>
 
 <footer>
   <div class="container">
@@ -42,5 +44,4 @@
   </div>
 </footer>
 
-<%= yield %>
 </html>

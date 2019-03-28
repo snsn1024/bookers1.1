@@ -1,65 +1,63 @@
-<div>
-	<% if flash[:notice] %>
-	<p> <%= flash[:notice] %></p>
-	<% end %>
-</div>
+<div class="body">
+	<div class="container">
+		<% if flash[:notice] %>
+		<p> <%= flash[:notice] %></p>
+		<% end %>
+		<div class="row">
+			<div class="col-lg-3">
+				<h2> User info</h2>
+				<%= attachment_image_tag current_user,:profile_image,:fill,60,60,format:'jpeg',fallback:"no_image.jpg",size:'60x60' %>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>name</th>
+							<th><%= current_user.name %></th>
+						</tr>
+						<tr>
+							<th>introduction</th>
+							<th><%= current_user.intro %></th>
+						</tr>
+					</tbody>
+				</table>
 
-<body>
-	<div class="body">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<h2> User info</h2>
-					<%= attachment_image_tag current_user,:profile_image,:fill,60,60,format:'jpeg',fallback:"no_image.jpg",size:'60x60' %>
-					<table class="table">
-						<tbody>
-							<tr>
-								<th>name</th>
-								<th><%= current_user.name %></th>
-							</tr>
-							<tr>
-								<th>introduction</th>
-								<th><%= current_user.intro %></th>
-							</tr>
-						</tbody>
-					</table>
-
-					<p> <%= link_to "setting",edit_user_path(current_user.id),class: "edit_user_#{current_user.id}" %></p>
-					
-
-					<h2>New book</h2>
-					<%= form_for(@book) do |f| %>
-					<p>Title</p>
-					<%= f.text_field :title, class: "book_title" %>
-					<p>Opinion</p>
-					<%= f.text_area :opinion, class: "book_body" %>
-					<br>
-					<%= f.submit 'Create book' %>
+				<div class=row>
+					<%= link_to edit_user_path(current_user.id),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" do %>
+					<i class="edit_user_#{current_user.id}" %></i>
 					<% end %>
 				</div>
 
-				<div class="col-lg-9">
-					<h2>Users</h2>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>image</th>
-								<th>name</th>
-								<th colspan="1"></th>
-							</tr>
-						</thead>
-						<% @users.each do |user| %>
-						<tbody>
-							<tr>
-								<td> <%= attachment_image_tag user,:profile_image,:fill,60,60,format:'jpeg',fallback:"no_image.jpg",size:'40x40' %> </td>
-								<td> <%= user.name %> </td>
-								<td> <%= link_to "show", user_path(user.id),class: "user_#{user.id}" %> </td>
-							</tr>
-						</tbody>
-						<% end %>
-					</table>
-				</table>
+				<h2>New book</h2>
+				<%= form_for(@book) do |f| %>
+				<p>Title</p>
+				<%= f.text_field :title, class: "col-xs-12 book_title" %>
+				<p>Opinion</p>
+				<%= f.text_area :opinion, class: "col-xs-12 book_body" %>
+				<br>
+				<%= f.submit 'Create book' ,class: "btn btn-primary col-xs-12" %>
+				<% end %>
 			</div>
+
+			<div class="col-lg-9">
+				<h2>Users</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>image</th>
+							<th>name</th>
+							<th colspan="1"></th>
+						</tr>
+					</thead>
+					<% @users.each do |user| %>
+					<tbody>
+						<tr>
+							<td> <%= attachment_image_tag user,:profile_image,:fill,60,60,format:'jpeg',fallback:"no_image.jpg",size:'40x40' %> </td>
+							<td> <%= user.name %> </td>
+							<td> <%= link_to "show", user_path(user.id),class: "user_#{user.id}" %> </td>
+						</tr>
+					</tbody>
+					<% end %>
+				</table>
+			</table>
 		</div>
 	</div>
-</body>
+</div>
