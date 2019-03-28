@@ -21,8 +21,7 @@
 				</table>
 
 				<div class=row>
-					<%= link_to edit_user_path(current_user.id),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" do %>
-					<i class="edit_user_#{current_user.id}" %></i>
+					<%= link_to edit_user_path(current_user.id),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" do %>
 					<% end %>
 				</div>
 
