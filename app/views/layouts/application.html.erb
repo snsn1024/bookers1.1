@@ -17,15 +17,15 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li><%= link_to'Home',user_path(current_user.id) %></li>
-        <li><%= link_to'Users','/users' %></li>
-        <li><%= link_to'Books','/books'%></li>
-        <li><%= link_to'logout',destroy_user_session_path, method: :delete%></li>
+        <li class="home"><%= link_to'Home',user_path(current_user.id) %></li>
+        <li class="users"><%= link_to'Users','/users' %></li>
+        <li class="books"><%= link_to'Books','/books'%></li>
+        <li class="logout"><%= link_to'logout',destroy_user_session_path, method: :delete%></li>
         <% else %>
-        <li><%= link_to'home',root_path %></li>
-        <li><%= link_to'About',about_path %></li>
-        <li><%= link_to'Sign up','/users/sign_up' %></li>
-        <li><%= link_to'Login','/users/sign_in' %></li>
+        <li class="home"><%= link_to'home',root_path %></li>
+        <li class="about"><%= link_to'About',about_path %></li>
+        <li class="sign_up"><%= link_to'Sign up','/users/sign_up' %></li>
+        <li class="sign_in"><%= link_to'Login','/users/sign_in' %></li>
         <% end %>
       </ul>
     </nav>

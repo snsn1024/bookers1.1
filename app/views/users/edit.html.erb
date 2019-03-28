@@ -4,10 +4,10 @@
     <p>error!</p>
   <% end %>
   <p>name</p>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "name" %>
   <p>image</p>
-  <%= f.attachment_field :profile_image %>
+  <%= f.attachment_field :profile_image, class: "user_image" %>
   <p>introduction</p>
-  <%= f.text_area :intro %>
+  <%= f.text_area :intro, class: "introduction" %>
   <%= f.submit 'Update User' %>
   <% end %>
